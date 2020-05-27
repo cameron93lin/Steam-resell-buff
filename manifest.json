@@ -1,0 +1,30 @@
+{
+	"manifest_version": 2,
+	"name": "挂刀插件",
+	"version": "1.0",
+	"description": "在Buff上自动计算挂刀折扣率",
+	"author": "cameron",
+	"permissions":["https://steamcommunity.com/"],
+	"icons":
+	{
+		"48": "icon.png",
+		"128": "icon.png"
+	},
+	"browser_action": 
+	{
+		"default_icon": "icon.png",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": 
+	[
+		{
+			"matches": ["https://buff.163.com/market/*"],
+			"js": ["jquery-1.8.3.js","content-script.js"],
+			"run_at": "document_start"
+		}
+	],
+	"web_accessible_resources": 
+	[
+		"inject.js"
+	]
+}
